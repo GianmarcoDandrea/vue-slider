@@ -20,7 +20,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div @museover="stopAutoLoop" @mouseleave="autoloop" class="item">
+                <div @mouseover="stopAutoLoop" @mouseleave="autoLoop" class="item">
                     <img :src="slides[activeIndex].image" alt="slides[activeIndex].title" />
                     <div class="info">
                         <h2 class="title">{{ slides[activeIndex].title }}</h2>

@@ -33,17 +33,21 @@ createApp({
 
             activeIndex: 0,
 
+            loopTime: 2000,
 
-        }
+            myInterval: 
+                setInterval (() =>{
+                    if(this.activeIndex === this.slides.length - 1) {
+                        this.activeIndex = 0;
+                    } else {
+                        this.activeIndex++;
+                    }
+                }, 2000),
+
+            }
     },
     created() {
-        setInterval (() =>{
-            if(this.activeIndex === this.slides.length - 1) {
-                this.activeIndex = 0;
-            } else {
-                this.activeIndex++;
-            }
-        }, 3000)
+        this.myInterval
     },
 
     methods : {
@@ -63,12 +67,20 @@ createApp({
             }
         },
 
-        clickThumb: function() {
-            
-        }, 
-
         stopAutoLoop: function () {
-            clearInterval()
-        }
-      },
-    }).mount("#app");
+            clearInterval(this.myInterval)
+        },
+
+        autoLoop: function () {
+            setInterval (() =>{
+                if(this.activeIndex === this.slides.length - 1) {
+                    this.activeIndex = 0;
+                } else {
+                    this.activeIndex++;
+                }
+            }, 2000)
+        },
+
+    },
+
+}).mount("#app");
