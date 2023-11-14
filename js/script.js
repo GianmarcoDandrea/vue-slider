@@ -36,7 +36,14 @@ createApp({
         }
     },
     created() {
-        console.log("L'APP è CREATA");
+        
+        setInterval (() =>{
+            if(this.activeIndex === this.slides.length - 1) {
+                this.activeIndex = 0;
+            } else {
+                this.activeIndex++;
+            }
+        }, 2000)
     },
 
     methods : {
@@ -53,6 +60,9 @@ createApp({
             } else {
                 this.activeIndex--;
             }
-         }
+        },
+        clickThumb: function() {
+
+        }
       },
     }).mount("#app");
