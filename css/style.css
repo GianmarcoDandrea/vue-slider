@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    float: left;
+    width: 700px;
+    height: 300px;
+    position: relative;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: right;
+    color: white;
+    text-shadow: #000 1px 0 3px;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+}
+
+.text {
+    font-size: 1rem;
+}
+
+.thumbs {
+    width: 300px;
+    display: flex;
+    height: 300px;
+    background: #000;
+    position: relative;
+}
+
+.thumb {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc((300px) / 5);
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inactive {
+    opacity: 0.5;
+}
+
+.active {
+    border: 2px solid #ccc;
+    opacity: 1;
+}
+
+.prev, .next {
+    font-size: 2rem;
+    color: lightgray;
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    z-index: 999;
+}
+
+.next {
+    bottom: 10px;
+}
+
+/*
+EXTRA: in questo esempio gli accordion vengono creati
+usando 2 bordi di un quadratino ruotato di 45 gradi
+In una versione base si possono usare delle icone
+oppure i caratteri ∧ (&and;) e ∨ (&or;)
+ */
+/* .prev::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%) rotate(-45deg);
+}
+
+.next::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    display: block;
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%) rotate(135deg);
+} */
