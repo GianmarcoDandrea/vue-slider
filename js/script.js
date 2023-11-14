@@ -33,17 +33,17 @@ createApp({
 
             activeIndex: 0,
 
+
         }
     },
     created() {
-        
         setInterval (() =>{
             if(this.activeIndex === this.slides.length - 1) {
                 this.activeIndex = 0;
             } else {
                 this.activeIndex++;
             }
-        }, 2000)
+        }, 3000)
     },
 
     methods : {
@@ -54,6 +54,7 @@ createApp({
                 this.activeIndex++;
             }
         },
+
         prevBtn: function() {
             if(this.activeIndex === 0) {
                 this.activeIndex = this.slides.length - 1;
@@ -61,8 +62,13 @@ createApp({
                 this.activeIndex--;
             }
         },
-        clickThumb: function() {
 
+        clickThumb: function() {
+            
+        }, 
+
+        stopAutoLoop: function () {
+            clearInterval()
         }
       },
     }).mount("#app");

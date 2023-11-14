@@ -20,7 +20,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div @museover="stopAutoLoop" @mouseleave="autoloop" class="item">
                     <img :src="slides[activeIndex].image" alt="slides[activeIndex].title" />
                     <div class="info">
                         <h2 class="title">{{ slides[activeIndex].title }}</h2>
@@ -36,7 +36,7 @@
                         <i class="fa-regular fa-circle-down"></i>
                     </div>
                     <div class="thumb">
-                        <img v-for="(image, index) in slides" :src="slides[index].image" :alt="slides[index].title" :class="index === activeIndex ? 'active' : 'inactive'" @click="clickThumb">
+                        <img v-for="(image, index) in slides" :src="slides[index].image" :alt="slides[index].title" :class="index === activeIndex ? 'active' : 'inactive'" @click="activeIndex = index ">
                     </div>
                 </div>
 
