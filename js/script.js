@@ -33,19 +33,13 @@ createApp({
 
             activeIndex: 0,
 
-            myLoop:
-                setInterval (() =>{
-                    if(this.activeIndex === this.slides.length - 1) {
-                        this.activeIndex = 0;
-                    } else {
-                        this.activeIndex++;
-                    }
-                }, 2000)
-    
-            }
+            myLoop: null,
+
+    };
     },
+
     created() {
-        this.myLoop
+        this.myLoop = setInterval(this.nextBtn, 2000)
     },
 
     methods : {
@@ -66,11 +60,11 @@ createApp({
         },
 
         stopAutoLoop: function () {
-            clearInterval(this.myLoop)
+            clearInterval(this.myLoop);
         },
 
-        autoLoop:function () {
-            this.myLoop
+        autoLoop: function () {
+            this.myLoop = setInterval(this.nextBtn, 2000);
         }
         
 
